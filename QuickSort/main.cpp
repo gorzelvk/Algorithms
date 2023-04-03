@@ -16,7 +16,7 @@ void quickSort(int array[], int start_index, int end_index){
     int pivot = array[end_index];
     int i = start_index;
     int j = end_index;
-    while(i <= j){
+    while(i < j){
         while(array[i] < pivot)
             i++;
         while(array[j] > pivot)
@@ -35,7 +35,7 @@ void quickSort(int array[], int start_index, int end_index){
 }
 
 int main() {
-    int numbers[8] = { -5, 12, -3, 4, 7, 5, 9, -20 };
+    int numbers[8] = { -5, 12, -3, 7, 7, 5, -28, -20 };
     int size = sizeof(numbers) / sizeof(int);
     quickSort(numbers, 0, size - 1);
     
