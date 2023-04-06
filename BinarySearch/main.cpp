@@ -13,10 +13,10 @@ int binarySearch(int numbers[], int arraySize, int soughtValue){
     while(true){
         mid_index = (high_index + low_index)/2;
         if(numbers[mid_index] < soughtValue){
-            low_index = mid_index+1;
+            low_index = mid_index + 1;
         }
         else if (numbers[mid_index] > soughtValue){
-            high_index = mid_index-1;
+            high_index = mid_index - 1;
         }
         else{
             return mid_index;
