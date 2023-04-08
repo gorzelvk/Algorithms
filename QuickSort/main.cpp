@@ -6,13 +6,13 @@
 
 #include <iostream>
 
-void swapElements(int* firstElement, int* secondElement){
-    int tmp = *firstElement;
-    *firstElement = *secondElement;
-    *secondElement = tmp;
+void swap_elements(int* first_element, int* second_element){
+    int tmp = *first_element;
+    *first_element = *second_element;
+    *second_element = tmp;
 }
 
-void quickSort(int array[], int start_index, int end_index){
+void quick_sort(int array[], int start_index, int end_index){
     int pivot = array[end_index];
     int i = start_index;
     int j = end_index;
@@ -23,21 +23,21 @@ void quickSort(int array[], int start_index, int end_index){
             j--;
         
         if(i <= j){
-            swapElements(&array[i], &array[j]);
+            swap_elements(&array[i], &array[j]);
             i++;
             j--;
         }
     }
     if (start_index < j)
-        quickSort(array, start_index, j);
+        quick_sort(array, start_index, j);
     if (end_index > i)
-        quickSort(array, i, end_index);
+        quick_sort(array, i, end_index);
 }
 
 int main() {
     int numbers[8] = { -5, 12, -3, 7, 7, 5, -28, -20 };
     int size = sizeof(numbers) / sizeof(int);
-    quickSort(numbers, 0, size - 1);
+    quick_sort(numbers, 0, size - 1);
     
     for(int i = 0; i < size; i++){
         std::cout << numbers[i] << std::endl;
